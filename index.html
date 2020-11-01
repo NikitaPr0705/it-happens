@@ -13,26 +13,24 @@
 <!-- Header -->
 <header class="section-header section-outer">
     <div class="section-inner">
+<!--        <img class="bg-image" src="img/1.svg" alt="">-->
         <div class="section-header-row section-header-row--top">
-        <div class="section-header-logo main-logo">
-            <source srcset="img/pic-mobile.png" media="(max-width: 575px)" type="image/png">
-            <img src="img/pic.png" alt="">
-        </div>
+            <img class="section-header-logo main-logo" src="img/logo.svg" alt="">
         <div class="section-header-social">
-            <ul class="section-header__list">
-                <li class="section-header__item">
-                    <a href="" class="section-header__link">
-                        <img src="" alt="">
+            <ul class="section-header-social__list">
+                <li class="section-header-social__item">
+                    <a href="" class="section-header-social__link">
+                        <img src="img/fb.svg" alt="">
                     </a>
                 </li>
-                <li class="section-header__item">
-                    <a href="" class="section-header__link">
-                        <img src="" alt="">
+                <li class="section-header-social__item">
+                    <a href="" class="section-header-social__link">
+                        <img src="img/youtube.svg" alt="">
                     </a>
                 </li>
-                <li class="section-header__item">
-                    <a href="" class="section-header__link">
-                        <img src="" alt="">
+                <li class="section-header-social__item">
+                    <a href="" class="section-header-social__link">
+                        <img src="img/inst.svg" alt="">
                     </a>
                 </li>
             </ul>
@@ -40,12 +38,14 @@
         <div class="section-header-lang">
             RU
         </div>
-            <a href="tel:+012 12 86 86 86" class="section-header-info">012 12 86 86 86</a>
+            <div class="section-header-info">
+            <a href="tel:+012 12 86 86 86" class="section-header-info__number">012 12 86 86 86</a>
             <a class="section-header-consult" href="#">Получить консультацию</a>
-                <div class="burger">
-                    <span></span>
-                </div>
-            <a href="" class="btn-main">Закажите обратный звонок</a>
+            </div>
+<!--                <div class="burger">-->
+<!--                    <span></span>-->
+<!--                </div>-->
+<!--            <a href="" class="btn-main">Закажите обратный звонок</a>-->
 
         </div>
         <div class="section-header-row section-header-row--bottom">
@@ -73,34 +73,36 @@
                         <a href="#" class="section-header-nav__link">наши контакты</a>
                     </li>
                 </ul>
-                <a href="tel:+012 12 86 86 86" class="section-header-info">012 12 86 86 86</a>
-                <div class="section-header-social">
-                    <ul class="section-header__list">
-                        <li class="section-header__item">
-                            <a href="" class="section-header__link">
-                                <img src="" alt="">
-                            </a>
-                        </li>
-                        <li class="section-header__item">
-                            <a href="" class="section-header__link">
-                                <img src="" alt="">
-                            </a>
-                        </li>
-                        <li class="section-header__item">
-                            <a href="" class="section-header__link">
-                                <img src="" alt="">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+<!--                <a href="tel:+012 12 86 86 86" class="section-header-info">012 12 86 86 86</a>-->
+<!--                <div class="section-header-social">-->
+<!--                    <ul class="section-header__list">-->
+<!--                        <li class="section-header__item">-->
+<!--                            <a href="" class="section-header__link">-->
+<!--                                <img src="img/fb.svg" alt="">-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li class="section-header__item">-->
+<!--                            <a href="" class="section-header__link">-->
+<!--                                <img src="img/youtube.svg" alt="">-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li class="section-header__item">-->
+<!--                            <a href="" class="section-header__link">-->
+<!--                                <img src="img/inst.svg" alt="">-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
             </nav>
         </div>
         <div class="section-header-content">
             <div class="section-header-wrapper">
+                <div class="header-text-wrapper">
                 <h1 class="section-header-wrapper__title">Несчастный случай?
                     Получили травму? </h1>
                 <h2 class="section-header-wrapper__subtitle">Мы здесь,
                     чтобы вам помочь!</h2>
+                </div>
                 <div class="modal">
                     <form action="">
                         <fieldset>
@@ -111,19 +113,20 @@
                                    placeholder="Ваш телефонный номер">
                             <div class="agreement-wrapper">
                                 <label class="agreement-text check">
-                                    <input type="checkbox" class="check__input" checked>
+                                    <input type="checkbox" class="check__input">
                                     <span class="check__box"></span>
                                     Отправляя свои данные,
                                     я соглашаюсь на то, чтобы со мной связались</label>
                             </div>
                             <div class="button-wrapper">
-                                <button class="btn-main" name="submit">Отправить</button>
+                                <button class="btn-form" name="submit">Отправить</button>
                             </div>
                         </fieldset>
 
                     </form>
                 </div>
             </div>
+
         </div>
     </div>
 </header>
@@ -135,6 +138,8 @@
     <!-- Intro-->
     <section class="section-outer section-intro">
     <div class="section-inner">
+
+
         <div class="section-content-wrapper">
             <div class="section-text-wrapper">
                 <h3 class="section-main-title">Предисловие</h3>
@@ -142,20 +147,20 @@
                     <p>Жизнь настолько же удивительна на сколько и непредсказуема.
                         Даже самые осторожные и благоразумные из нас, попадают в аварии, получают травмы на работе,
                         страдают из-за халатности врачей, становятся жертвами нападений. И зачастую, эти неприятности
-                        происходят по чужой вине. Как говорится – it happens…
+                        происходят по чужой вине. Как говорится – it happens…</p>
 
-                        Если вы пострадали в результате несчастного случая и не знаете, что делать дальше, мы очень
-                        надеемся, что на нашем сайте вы сможете найти ответы на ваши вопросы.
+                        <p>Если вы пострадали в результате несчастного случая и не знаете, что делать дальше, мы очень
+                            надеемся, что на нашем сайте вы сможете найти ответы на ваши вопросы.</p>
 
-                        Если вы хотите получить бесплатную консультацию специалиста it happens – звоните нам или
+                        <p>Если вы хотите получить бесплатную консультацию специалиста it happens – звоните нам или
                         оставьте заявку, и мы незамедлительно с вами свяжемся.</p>
                 </div>
                 <a href="#" class="btn-secondary">Консультация бесплатно</a>
             </div>
             <picture>
-                <source srcset="img/pic.webp" type="image/webp">
-                <source srcset="img/pic-mobile.png" media="(max-width: 575px)" type="image/png">
-                <img src="img/pic.png" alt="">
+<!--                <source srcset="img/pic.webp" type="image/webp">-->
+<!--                <source srcset="img/pic-mobile.png" media="(max-width: 575px)" type="image/png">-->
+                <img src="img/img1.svg" alt="">
             </picture>
         </div>
     </div>
@@ -167,11 +172,13 @@
         <div class="section-inner">
             <div class="section-content-wrapper">
                 <div class="section-text-wrapper">
+                    <div class="section-text-wrapper__inner">
                     <h3 class="section-main-title">Did you know?</h3>
                     <div class="section-main-text">
                         <p>Proin iaculis urna non ultricies accumsan. Nullam quis placerat est.
                             Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
                             turpis egestas.</p>
+                    </div>
                     </div>
                 </div>
                 <a href="#" class="btn-main">More information</a>
@@ -183,6 +190,7 @@
     <!-- Injuries-->
     <section class="section-outer section-injuries">
         <div class="section-inner">
+<!--            <img class="bg-image" src="img/2.svg" alt="">-->
             <div class="section-content-wrapper">
                 <div class="section-text-wrapper">
                     <h3 class="section-main-title">что случилось?</h3>
@@ -193,84 +201,97 @@
                 <ul class="section-content__list">
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <h4 class="item-title">
+                            <div class="item-title">
+                            <h4 >
                                 Серьезные травмы
                             </h4>
+                            </div>
                             <div class="item-text">
                                 <p>Curabitur ac leo nunc. Vestibulum et mauris vel ante finibus.</p>
                             </div>
                             <picture class="item-icon">
-                                <img src="" alt="">
+                                <img src="img/med.svg" alt="">
                             </picture>
                             <a href="#" class="btn-secondary">Подробнее</a>
                         </div>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <h4 class="item-title">
-                                Серьезные травмы
+                            <div class="item-title">
+                            <h4>
+                                Дорожно транспортное
+                                происшествие
                             </h4>
+                                </div>
                             <div class="item-text">
                                 <p>Curabitur ac leo nunc. Vestibulum et mauris vel ante finibus.</p>
                             </div>
                             <picture class="item-icon">
-                                <img src="" alt="">
+                                <img src="img/med.svg" alt="">
                             </picture>
                             <a href="#" class="btn-secondary">Подробнее</a>
                         </div>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <h4 class="item-title">
-                                Серьезные травмы
-                            </h4>
+                            <div class="item-title">
+                                <h4>
+                                    Происшествие на работе
+                                </h4>
+                            </div>
                             <div class="item-text">
                                 <p>Curabitur ac leo nunc. Vestibulum et mauris vel ante finibus.</p>
                             </div>
                             <picture class="item-icon">
-                                <img src="" alt="">
+                                <img src="img/med.svg" alt="">
                             </picture>
                             <a href="#" class="btn-secondary">Подробнее</a>
                         </div>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <h4 class="item-title">
-                                Серьезные травмы
-                            </h4>
+                            <div class="item-title">
+                                <h4>
+                                    Происшествие в общественном месте
+                                </h4>
+                            </div>
                             <div class="item-text">
                                 <p>Curabitur ac leo nunc. Vestibulum et mauris vel ante finibus.</p>
                             </div>
                             <picture class="item-icon">
-                                <img src="" alt="">
+                                <img src="img/med.svg" alt="">
                             </picture>
                             <a href="#" class="btn-secondary">Подробнее</a>
                         </div>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <h4 class="item-title">
-                                Серьезные травмы
-                            </h4>
+                            <div class="item-title">
+                                <h4>
+                                    Медиицинская халатность
+                                </h4>
+                            </div>
                             <div class="item-text">
                                 <p>Curabitur ac leo nunc. Vestibulum et mauris vel ante finibus.</p>
                             </div>
                             <picture class="item-icon">
-                                <img src="" alt="">
+                                <img src="img/med.svg" alt="">
                             </picture>
                             <a href="#" class="btn-secondary">Подробнее</a>
                         </div>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <h4 class="item-title">
-                                Серьезные травмы
-                            </h4>
+                            <div class="item-title">
+                                <h4>
+                                    Травмы в результате нападения
+                                </h4>
+                            </div>
                             <div class="item-text">
                                 <p>Curabitur ac leo nunc. Vestibulum et mauris vel ante finibus.</p>
                             </div>
                             <picture class="item-icon">
-                                <img src="" alt="">
+                                <img src="img/med.svg" alt="">
                             </picture>
                             <a href="#" class="btn-secondary">Подробнее</a>
                         </div>
@@ -296,7 +317,7 @@
                             <input type="tel" class="input form-number" name="number"
                                    placeholder="Ваш телефонный номер">
                             <div class="button-wrapper">
-                                <button class="btn-main" name="submit">Отправить</button>
+                                <button class="btn-form" name="submit">Отправить</button>
                             </div>
                         </fieldset>
 
@@ -314,7 +335,10 @@
                             является время.</p>
                     </div>
                 </div>
-                <a href="" class="btn-main">Закажите обратный звонок</a>
+                <picture>
+                    <img src="img/consult-page.svg" alt="">
+                </picture>
+<!--                <a href="" class="btn-main">Закажите обратный звонок</a>-->
             </div>
         </div>
     </section>
@@ -325,10 +349,10 @@
         <div class="section-inner">
             <div class="section-content-wrapper">
                 <div class="section-text-wrapper">
-                    <h3 class="section-main-title">4 <span>шага успешного иска</span></h3>
-                    <div class="section-main-text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor placerat luctus.</p>
-                    </div>
+                    <h3 class="section-main-title"><span>4</span> шага успешного иска</h3>
+<!--                    <div class="section-main-text">-->
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor placerat luctus.</p>-->
+<!--                    </div>-->
                 </div>
                 <ul class="section-content__list">
                     <li class="section-content__item">
@@ -344,7 +368,7 @@
                             </div>
                         </div>
                         <picture class="item-picture">
-                            <img src="img/pic.png" alt="">
+                            <img src="img/img4.svg" alt="">
                         </picture>
                     </li>
                     <li class="section-content__item">
@@ -360,7 +384,7 @@
                             </div>
                         </div>
                         <picture class="item-picture">
-                            <img src="img/pic.png" alt="">
+                            <img src="img/img5.svg" alt="">
                         </picture>
                     </li>
                     <li class="section-content__item">
@@ -377,7 +401,7 @@
                             </div>
                         </div>
                         <picture class="item-picture">
-                            <img src="img/pic.png" alt="">
+                            <img src="img/img6.svg" alt="">
                         </picture>
                     </li>
                     <li class="section-content__item">
@@ -394,7 +418,7 @@
                             </div>
                         </div>
                         <picture class="item-picture">
-                            <img src="img/pic.png" alt="">
+                            <img src="img/img7.svg" alt="">
                         </picture>
                     </li>
                 </ul>
@@ -406,6 +430,12 @@
     <!-- Services-->
     <section class="section-outer section-services">
         <div class="section-inner">
+            <picture class="section-services__picture">
+                <img class="section-services__img section-services__img--1" src="img/img8.svg" alt="">
+            </picture>
+            <picture class="section-services__picture">
+                <img class="section-services__img section-services__img--2" src="img/img9.svg" alt="">
+            </picture>
             <div class="section-content-wrapper">
                 <div class="section-text-wrapper">
                     <h3 class="section-main-title">наши сервисы</h3>
@@ -414,7 +444,8 @@
                     </div>
                 </div>
                 <ul class="section-content__list">
-                    <li class="section-content__item">
+                    <li class="section-content__list--inner">
+                    <div class="section-content__item">
                         <div class="item-wrapper">
                             <h4 class="item-title">Бесплатная консультация</h4>
                             <div class="item-text">
@@ -426,11 +457,8 @@
                             </div>
                             <a href="#" class="item-link"></a>
                         </div>
-                        <picture class="item-picture">
-                            <img src="img/pic.png" alt="">
-                        </picture>
-                    </li>
-                    <li class="section-content__item">
+                    </div>
+                    <div class="section-content__item">
                         <div class="item-wrapper">
                             <h4 class="item-title">Выезд на дом</h4>
                             <div class="item-text">
@@ -440,11 +468,13 @@
                             </div>
                             <a href="#" class="item-link"></a>
                         </div>
-                        <picture class="item-picture">
-                            <img src="img/pic.png" alt="">
-                        </picture>
+<!--                        <picture class="item-picture">-->
+<!--                            <img src="img/pic.png" alt="">-->
+<!--                        </picture>-->
+                    </div>
                     </li>
-                    <li class="section-content__item">
+                    <li class="section-content__list--inner">
+                    <div class="section-content__item">
                         <div class="item-wrapper">
                             <h4 class="item-title">Помощь в заполнении необходимых форм
                             </h4>
@@ -457,11 +487,11 @@
                             </div>
                             <a href="#" class="item-link"></a>
                         </div>
-                        <picture class="item-picture">
-                            <img src="img/pic.png" alt="">
-                        </picture>
-                    </li>
-                    <li class="section-content__item">
+<!--                        <picture class="item-picture">-->
+<!--                            <img src="img/pic.png" alt="">-->
+<!--                        </picture>-->
+                    </div>
+                    <div class="section-content__item">
                         <div class="item-wrapper">
                             <h4 class="item-title">Сбор документов и установление обстоятельств происшествия
                             </h4>
@@ -474,11 +504,13 @@
                             </div>
                             <a href="#" class="item-link"></a>
                         </div>
-                        <picture class="item-picture">
-                            <img src="img/pic.png" alt="">
-                        </picture>
+<!--                        <picture class="item-picture">-->
+<!--                            <img src="img/pic.png" alt="">-->
+<!--                        </picture>-->
+                    </div>
                     </li>
-                    <li class="section-content__item">
+                    <li class="section-content__list--inner">
+                    <div class="section-content__item">
                         <div class="item-wrapper">
                             <h4 class="item-title">Организация комплексной
                                 медицинской реабилитации
@@ -491,11 +523,11 @@
                             </div>
                             <a href="#" class="item-link"></a>
                         </div>
-                        <picture class="item-picture">
-                            <img src="img/pic.png" alt="">
-                        </picture>
-                    </li>
-                    <li class="section-content__item">
+<!--                        <picture class="item-picture">-->
+<!--                            <img src="img/pic.png" alt="">-->
+<!--                        </picture>-->
+                    </div>
+                    <div class="section-content__item">
                         <div class="item-wrapper">
                             <h4 class="item-title">Ремонт и предоставление подменного автомобиля
                             </h4>
@@ -506,9 +538,10 @@
                             </div>
                             <a href="#" class="item-link"></a>
                         </div>
-                        <picture class="item-picture">
-                            <img src="img/pic.png" alt="">
-                        </picture>
+<!--                        <picture class="item-picture">-->
+<!--                            <img src="img/pic.png" alt="">-->
+<!--                        </picture>-->
+                    </div>
                     </li>
                 </ul>
             </div>
@@ -545,25 +578,21 @@ Vestibulum et mauris vel ante finibus.</span>
                     <h3 class="section-main-title">истории клиентов</h3>
                     <article class="section-article">
                     <div class="section-main-text">
-                        <p>Жизнь настолько же удивительна на сколько и непредсказуема.
-                            Даже самые осторожные и благоразумные из нас, попадают в аварии, получают травмы на работе,
-                            страдают из-за халатности врачей, становятся жертвами нападений. И зачастую, эти неприятности
-                            происходят по чужой вине. Как говорится – it happens…
-
-                            Если вы пострадали в результате несчастного случая и не знаете, что делать дальше, мы очень
-                            надеемся, что на нашем сайте вы сможете найти ответы на ваши вопросы.
-
-                            Если вы хотите получить бесплатную консультацию специалиста it happens – звоните нам или
-                            оставьте заявку, и мы незамедлительно с вами свяжемся.</p>
+                        <p>“Татьяна Танаева родом из Латвии работала горничной в сети отелей Travelodge.
+                            16 февраля 2018 г., выходя из лифта в фойе гостиницы, она поскользнулась на только что
+                            вымытом полу. Падая, Татьяна инстинктивно выставила вперед руку, так что удар пришелся
+                            именно на нее. Результат – сильный ушиб руки, повреждение плеча, распухшее запястье и
+                            как следствие временная потеря трудоспособности..”
+                        </p>
                     </div>
-                    <a href="#" class="btn-secondary">другие истории</a>
+                    <a href="#" class="btn-main">другие истории</a>
                     </article>
                 </div>
-                <picture>
-                    <source srcset="img/pic.webp" type="image/webp">
-                    <source srcset="img/pic-mobile.png" media="(max-width: 575px)" type="image/png">
-                    <img src="img/pic.png" alt="">
-                </picture>
+<!--                <picture>-->
+<!--&lt;!&ndash;                    <source srcset="img/pic.webp" type="image/webp">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <source srcset="img/pic-mobile.png" media="(max-width: 575px)" type="image/png">&ndash;&gt;-->
+<!--                    <img src="img/img11.svg" alt="">-->
+<!--                </picture>-->
             </div>
         </div>
     </section>
@@ -601,9 +630,9 @@ Vestibulum et mauris vel ante finibus.</span>
                     <a href="#" class="btn-secondary">Консультация бесплатно</a>
                 </div>
                 <picture>
-                    <source srcset="img/pic.webp" type="image/webp">
-                    <source srcset="img/pic-mobile.png" media="(max-width: 575px)" type="image/png">
-                    <img src="img/pic.png" alt="">
+<!--                    <source srcset="img/pic.webp" type="image/webp">-->
+<!--                    <source srcset="img/pic-mobile.png" media="(max-width: 575px)" type="image/png">-->
+                    <img src="img/img12.svg" alt="">
                 </picture>
             </div>
         </div>
@@ -613,43 +642,55 @@ Vestibulum et mauris vel ante finibus.</span>
     <!-- FAQ-->
     <section class="section-outer section-faq">
         <div class="section-inner">
+            <img class="bg-img bg-img--1" src="img/img13.svg" alt="">
+            <img class="bg-img bg-img--2" src="img/img14.svg" alt="">
             <div class="section-content-wrapper">
+                <div class="section-text-wrapper">
+                    <h3 class="section-main-title">Ваши вопросы</h3>
+                </div>
                 <ul class="section-content__list">
                     <li class="section-content__item">
                         <div class="item-wrapper">
+                            <input class="item-wrapper__check" type="checkbox" checked>
+                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
                             <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
+
                             <div class="item-text">
-                                <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
-                                    Companies House:
-                                    <a href="#">https://beta.companieshouse.gov.uk/company/08786640</a>
-                                    Financial Conduct Authority (FCA):
+                                <p> <strong>it happens</strong>  – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
+                                    Companies House:<br>
+                                    <a href="#">https://beta.companieshouse.gov.uk/company/08786640</a></p>
+                                    <p>Financial Conduct Authority (FCA):<br>
                                     <a href="#">https://register.fca.org.uk/ShPo_FirmDetailsPage?id=0010X00004MjNdyQAF
-                                    </a>
-                                    Information Commissioner’s Office (ICO):
-                                    <a href="#">https://ico.org.uk/ESDWebPages/Entry/ZA033758</a>
+                                    </a></p>
+                                    <p>Information Commissioner’s Office (ICO):<br>
+                                        <a href="#">https://ico.org.uk/ESDWebPages/Entry/ZA033758</a></p>
                                     </p>
                             </div>
                         </div>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
+                            <input class="item-wrapper__check" type="checkbox" checked>
+                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
                             <h4 class="item-title">Как мне стоит поступить, сразу сообщить о происшествии в страховую
                                 компанию или сначала связаться с it happens?</h4>
                             <div class="item-text">
-                                <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
-                                    Companies House:
-                                    <a href="#">https://beta.companieshouse.gov.uk/company/08786640</a>
-                                    Financial Conduct Authority (FCA):
+                                <p> <strong>it happens</strong>  – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
+                                    Companies House:<br>
+                                    <a href="#">https://beta.companieshouse.gov.uk/company/08786640</a></p>
+                                <p>Financial Conduct Authority (FCA):<br>
                                     <a href="#">https://register.fca.org.uk/ShPo_FirmDetailsPage?id=0010X00004MjNdyQAF
-                                    </a>
-                                    Information Commissioner’s Office (ICO):
-                                    <a href="#">https://ico.org.uk/ESDWebPages/Entry/ZA033758</a>
+                                    </a></p>
+                                <p>Information Commissioner’s Office (ICO):<br>
+                                    <a href="#">https://ico.org.uk/ESDWebPages/Entry/ZA033758</a></p>
                                 </p>
                             </div>
                         </div>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
+                            <input class="item-wrapper__check" type="checkbox" checked>
+                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
                             <h4 class="item-title">Мне кажется, я несу ответственность за произошедшее.
                                 Могу ли я и в этом случае обратиться к вам?</h4>
                             <div class="item-text">
@@ -667,6 +708,8 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
+                            <input class="item-wrapper__check" type="checkbox" checked>
+                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
                             <h4 class="item-title">Я живу за пределами Лондона и работаю допоздна.
                                 Каким образом будет строиться работа с it happens?</h4>
                             <div class="item-text">
@@ -684,6 +727,8 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
+                            <input class="item-wrapper__check" type="checkbox" checked>
+                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
                             <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
@@ -700,6 +745,8 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
+                            <input class="item-wrapper__check" type="checkbox" checked>
+                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
                             <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
@@ -716,6 +763,8 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
+                            <input class="item-wrapper__check" type="checkbox" checked>
+                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
                             <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
@@ -732,6 +781,8 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
+                            <input class="item-wrapper__check" type="checkbox" checked>
+                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
                             <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
@@ -748,6 +799,8 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
+                            <input class="item-wrapper__check" type="checkbox" checked>
+                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
                             <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
@@ -764,6 +817,8 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
+                            <input class="item-wrapper__check" type="checkbox" checked>
+                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
                             <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
@@ -780,6 +835,8 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
+                            <input class="item-wrapper__check" type="checkbox" checked>
+                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
                             <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
@@ -796,6 +853,8 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
+                            <input class="item-wrapper__check" type="checkbox" checked>
+                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
                             <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
@@ -812,6 +871,8 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
+                            <input class="item-wrapper__check" type="checkbox" checked>
+                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
                             <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
@@ -828,6 +889,8 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
+                            <input class="item-wrapper__check" type="checkbox" checked>
+                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
                             <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
@@ -843,7 +906,7 @@ Vestibulum et mauris vel ante finibus.</span>
                         </div>
                     </li>
                 </ul>
-                <a href="#" class="btn-secondary">more information</a>
+                <a href="#" class="btn-main">more information</a>
             </div>
         </div>
     </section>
@@ -855,18 +918,51 @@ Vestibulum et mauris vel ante finibus.</span>
             <div class="section-content-wrapper">
                 <div class="section-text-wrapper">
                     <h3 class="section-main-title">Может быть вам будет это интересно</h3>
-                    <a href="#" class="btn-main">more information</a>
+                    <a href="#" class="btn-secondary">more information</a>
                 </div>
                <ul class="section-content__list">
                    <li class="section-content__item">
                        <article class="item-article">
                            <picture>
-                               <source srcset="img/pic.webp" type="image/webp">
-                               <img src="img/pic.png" alt="">
+<!--                               <source srcset="img/pic.webp" type="image/webp">-->
+                               <img src="img/post-img.svg" alt="">
                            </picture>
                            <div class="article-text">
                            <span class="article-title">Proin iaculis urna non ultricies accumsan</span>
-                               <a href="#" class="article-link"></a>
+                               <a href="#" class="article-link">
+                                   <img src="img/arrow.svg" alt="">
+
+                               </a>
+                           </div>
+                       </article>
+                   </li>
+                   <li class="section-content__item">
+                       <article class="item-article">
+                           <picture>
+<!--                               <source srcset="img/pic.webp" type="image/webp">-->
+                               <img src="img/post-img.svg" alt="">
+                           </picture>
+                           <div class="article-text">
+                               <span class="article-title">Proin iaculis urna non ultricies accumsan</span>
+                               <a href="#" class="article-link">
+                                   <img src="img/arrow.svg" alt="">
+
+                               </a>
+                           </div>
+                       </article>
+                   </li>
+                   <li class="section-content__item">
+                       <article class="item-article">
+                           <picture>
+<!--                               <source srcset="img/pic.webp" type="image/webp">-->
+                               <img src="img/post-img.svg" alt="">
+                           </picture>
+                           <div class="article-text">
+                               <span class="article-title">Proin iaculis urna non ultricies accumsan</span>
+                               <a href="#" class="article-link">
+                                   <img src="img/arrow.svg" alt="">
+
+                               </a>
                            </div>
                        </article>
                    </li>
@@ -878,7 +974,9 @@ Vestibulum et mauris vel ante finibus.</span>
 
     <!-- Map-->
     <section class="section-outer section-map">
-        map
+<!--        <div class="section-inner">-->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19349.827835088698!2d-122.45149667744691!3d37.74612298824241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2z0KHQsNC9LdCk0YDQsNC90YbQuNGB0LrQviwg0JrQsNC70LjRhNC-0YDQvdC40Y8sINCh0KjQkA!5e0!3m2!1sru!2sua!4v1604256257986!5m2!1sru!2sua"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+<!--        </div>-->
     </section>
     <!-- / Map-->
 
@@ -888,7 +986,7 @@ Vestibulum et mauris vel ante finibus.</span>
 <footer class="section-outer section-footer">
     <div class="section-inner">
         <div class="section-footer__info">
-            <img src="" class="main-logo">
+            <img src="img/logo-white.svg" class="main-logo">
             <span class="section-footer__text">We help people get access to Justice and assist them in every step
                 in pursuing or settling their personal injury claims.</span>
         </div>
@@ -960,7 +1058,9 @@ Vestibulum et mauris vel ante finibus.</span>
         </div>
     </div>
     <div class="section-footer__rights-info">
-        <span> <strong>it happens</strong>  / Euronet Alliance Ltd – authorised and regulated by the Financial Conduct Authority in respect of regulated claims management activities. FRN: 832645.</span>
+        <div class="section-inner">
+            <span> <strong>it happens</strong>  / Euronet Alliance Ltd – authorised and regulated by the Financial Conduct Authority in respect of regulated claims management activities. FRN: 832645.</span>
+        </div>
     </div>
 </footer>
 
