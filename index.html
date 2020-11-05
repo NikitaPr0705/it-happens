@@ -6,6 +6,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>It Happens</title>
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-Df22Ix4t3gEdhLYR-K9VCGuuEj1iojQ&callback=initMap&libraries=&v=weekly"
+            defer
+    ></script>
+    <script>
+        let map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 37.746538, lng: -122.444849 },
+                zoom: 15,
+                styles: [
+                    {
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#f5f5f5"
+                            }
+                        ]
+                    },
+                    {
+                        "elementType": "labels.icon",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#616161"
+                            }
+                        ]
+                    },
+                    {
+                        "elementType": "labels.text.stroke",
+                        "stylers": [
+                            {
+                                "color": "#f5f5f5"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "administrative.land_parcel",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#bdbdbd"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#eeeeee"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#757575"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi.park",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#e5e5e5"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi.park",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#9e9e9e"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#ffffff"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#757575"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#dadada"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#616161"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.local",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#9e9e9e"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit.line",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#e5e5e5"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit.station",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#eeeeee"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#c9c9c9"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#9e9e9e"
+                            }
+                        ]
+                    }
+                ]
+            });
+
+            const marker = new google.maps.Marker({
+                position: {lat: 37.746538, lng: -122.444849},
+                map: map,
+                icon: 'img/map.png'
+            });
+        }
+    </script>
 </head>
 
 <body>
@@ -13,9 +194,8 @@
 <!-- Header -->
 <header class="section-header section-outer">
     <div class="section-inner">
-<!--        <img class="bg-image" src="img/1.svg" alt="">-->
         <div class="section-header-row section-header-row--top">
-            <img class="section-header-logo main-logo" src="img/logo.svg" alt="">
+            <img class="section-header-logo main-logo" src="img/logo.svg" alt="Main logo">
         <div class="section-header-social">
             <ul class="section-header-social__list">
                 <li class="section-header-social__item">
@@ -36,7 +216,12 @@
             </ul>
         </div>
         <div class="section-header-lang">
-            RU
+        <div class="select">
+            <select name="format" id="select">
+                <option value="ru">RU</option>
+                <option value="en">EN</option>
+            </select>
+        </div>
         </div>
             <div class="section-header-info">
             <a href="tel:+012 12 86 86 86" class="section-header-info__number">012 12 86 86 86</a>
@@ -52,7 +237,36 @@
             <nav class="section-header-nav">
                 <ul class="section-header-nav__list">
                     <li class="section-header-nav__item">
+                        <a href="#" class="section-header-nav__link">Главная</a>
+                    </li>
+                    <li class="section-header-nav__item"  id="nav__about-us">
                         <a href="#" class="section-header-nav__link">О нас</a>
+                                <ul class="drop-down-menu__list">
+                                    <li class="drop-down-menu__item drop-down-menu__item--hover">
+                                        <a href="#" class="drop-down-menu__link"><span
+                                                class="round"></span>Дорожно транспортное происшествие</a>
+                                    </li>
+                                    <li class="drop-down-menu__item">
+                                        <a href="#" class="drop-down-menu__link"><span
+                                                class="round"></span>Происшествие на работе</a>
+                                    </li>
+                                    <li class="drop-down-menu__item">
+                                        <a href="#" class="drop-down-menu__link"><span
+                                                class="round"></span>Происшествие в публичном месте</a>
+                                    </li>
+                                    <li class="drop-down-menu__item">
+                                        <a href="#" class="drop-down-menu__link"><span
+                                                class="round"></span>Медицинская халатность</a>
+                                    </li>
+                                    <li class="drop-down-menu__item">
+                                        <a href="#" class="drop-down-menu__link"><span
+                                                class="round"></span>Травмы в результате нападения</a>
+                                    </li>
+                                    <li class="drop-down-menu__item">
+                                        <a href="#" class="drop-down-menu__link"><span
+                                                class="round"></span>Серьезные травмы</a>
+                                    </li>
+                                </ul>
                     </li>
                     <li class="section-header-nav__item">
                         <a href="#" class="section-header-nav__link">что случилось?</a>
@@ -107,16 +321,21 @@
                     <form action="">
                         <fieldset>
                             <legend>Закажите обратный звонок</legend>
-                            <input type="text" class="input form-name" name="username"
+                            <div class="input form-name">
+                            <input type="text" name="username"
                                    placeholder="Ваше имя" required>
-                            <input type="tel" class="input form-number" name="number"
+                            </div>
+                            <div class="input form-number">
+                            <input type="tel" name="number"
                                    placeholder="Ваш телефонный номер">
+                            </div>
                             <div class="agreement-wrapper">
-                                <label class="agreement-text check">
-                                    <input type="checkbox" class="check__input">
-                                    <span class="check__box"></span>
-                                    Отправляя свои данные,
-                                    я соглашаюсь на то, чтобы со мной связались</label>
+                                <label class="agreement-text label">
+                                    <input type="checkbox" class="checkbox">
+                                    <span class="fake"></span>
+                                    <span class="text"> Отправляя свои данные,
+                                    я соглашаюсь на то, чтобы со мной связались</span>
+                                   </label>
                             </div>
                             <div class="button-wrapper">
                                 <button class="btn-form" name="submit">Отправить</button>
@@ -124,6 +343,13 @@
                         </fieldset>
 
                     </form>
+
+                    <div class="ready">
+                        <div class="ready-round">
+                            <img src="img/check.svg" alt="">
+                        </div>
+                        <span class="ready-text">Готово</span>
+                    </div>
                 </div>
             </div>
 
@@ -310,18 +536,32 @@
                     <form action="">
                         <fieldset>
                             <legend>Закажите обратный звонок</legend>
-                            <input type="text" class="input form-name" name="username"
-                                   placeholder="Ваше имя" required>
-                            <input type="email" class="input form-email" name="email"
+                            <div class="input form-name">
+                                <input type="text" name="username"
+                                       placeholder="Ваше имя" required>
+                            </div>
+                            <div class="input form-email" >
+                            <input type="email" name="email"
                                    placeholder="Ваш email" required>
-                            <input type="tel" class="input form-number" name="number"
-                                   placeholder="Ваш телефонный номер">
+                            </div>
+                            <div class="input form-number">
+                                <input type="tel" name="number"
+                                       placeholder="Ваш телефонный номер">
+                            </div>
+
                             <div class="button-wrapper">
                                 <button class="btn-form" name="submit">Отправить</button>
                             </div>
                         </fieldset>
 
                     </form>
+                    
+                    <div class="ready">
+                        <div class="ready-round">
+                            <img src="img/check.svg" alt="">
+                        </div>
+                        <span class="ready-text">Готово</span>
+                    </div>
                 </div>
                 <div class="section-text-wrapper">
                     <h3 class="section-main-title">Запишись
@@ -445,9 +685,19 @@
                 </div>
                 <ul class="section-content__list">
                     <li class="section-content__list--inner">
+
                     <div class="section-content__item">
-                        <div class="item-wrapper">
-                            <h4 class="item-title">Бесплатная консультация</h4>
+                        <a href="#" class="section-content__item-link">
+
+
+                            <div class="item-wrapper">
+                                <div class="item-title-wrapper">
+                                    <h4 class="item-title">Бесплатная консультация
+
+                                    </h4>
+                                    <img class="arrow" src="img/arrow.svg" alt="">
+
+                                </div>
                             <div class="item-text">
                                 <p>Для удобства наших клиентов it happens предоставляет бесплатные консультации по
                                     телефону, онлайн и в офисе компании. </p>
@@ -455,29 +705,45 @@
                                     it happens — это быстрый, надежный и эффективный способ получения актуальной
                                     информации особенно тогда, когда решающим фактором является время</p>
                             </div>
-                            <a href="#" class="item-link"></a>
                         </div>
+                        </a>
                     </div>
                     <div class="section-content__item">
+                        <a href="#" class="section-content__item-link">
+
                         <div class="item-wrapper">
-                            <h4 class="item-title">Выезд на дом</h4>
+                            <div class="item-title-wrapper">
+                                <h4 class="item-title">Выезд на дом
+
+                                </h4>
+                                <img class="arrow" src="img/arrow.svg" alt="">
+
+                            </div>
                             <div class="item-text">
                                 <p>Если в силу каких-либо обстоятельств, вам кажется необходимым приезд сотрудника
                                     it happens к вам домой – сообщите нам. Мы с удовольствием договоримся о визите
                                     в удобное для вас время.</p>
                             </div>
-                            <a href="#" class="item-link"></a>
                         </div>
 <!--                        <picture class="item-picture">-->
 <!--                            <img src="img/pic.png" alt="">-->
 <!--                        </picture>-->
+                        </a>
                     </div>
                     </li>
                     <li class="section-content__list--inner">
                     <div class="section-content__item">
+                        <a href="#" class="section-content__item-link">
+
                         <div class="item-wrapper">
-                            <h4 class="item-title">Помощь в заполнении необходимых форм
-                            </h4>
+                            <div class="item-title-wrapper">
+                                <h4 class="item-title">Помощь в заполнении необходимых форм
+
+
+                                </h4>
+                                <img class="arrow" src="img/arrow.svg" alt="">
+
+                            </div>
                             <div class="item-text">
                                 <p>Процесс сбора документов и заполнения форм непрост. Вопросы на первый взгляд не
                                     так уж сложны, так как в большинстве своем касаются ваших персональных данных.
@@ -485,16 +751,24 @@
                                     у них абсолютно противоположная задача и вероятнее всего будут «докапываться» до
                                     каждого пункта заполненного вами документа.</p>
                             </div>
-                            <a href="#" class="item-link"></a>
                         </div>
 <!--                        <picture class="item-picture">-->
 <!--                            <img src="img/pic.png" alt="">-->
 <!--                        </picture>-->
+                        </a>
                     </div>
                     <div class="section-content__item">
+                        <a href="#" class="section-content__item-link">
+
                         <div class="item-wrapper">
-                            <h4 class="item-title">Сбор документов и установление обстоятельств происшествия
-                            </h4>
+                            <div class="item-title-wrapper">
+                                <h4 class="item-title">Сбор документов и установление обстоятельств происшествия
+
+
+                                </h4>
+                                <img class="arrow" src="img/arrow.svg" alt="">
+
+                            </div>
                             <div class="item-text">
                                 <p>Для удобства наших клиентов it happens предоставляет бесплатные консультации по
                                     телефону, онлайн и в офисе компании. </p>
@@ -502,45 +776,59 @@
                                     it happens — это быстрый, надежный и эффективный способ получения актуальной
                                     информации особенно тогда, когда решающим фактором является время</p>
                             </div>
-                            <a href="#" class="item-link"></a>
                         </div>
 <!--                        <picture class="item-picture">-->
 <!--                            <img src="img/pic.png" alt="">-->
 <!--                        </picture>-->
+                        </a>
                     </div>
                     </li>
                     <li class="section-content__list--inner">
                     <div class="section-content__item">
+                        <a href="#" class="section-content__item-link">
+
                         <div class="item-wrapper">
+                            <div class="item-title-wrapper">
                             <h4 class="item-title">Организация комплексной
                                 медицинской реабилитации
+
                             </h4>
+                                <img class="arrow" src="img/arrow.svg" alt="">
+
+                            </div>
                             <div class="item-text">
                                 <p>Любой иск идет по определенному сценарию и ваш доступ к бесплатным реабилитационным
                                     мероприятиям, возможен только тогда, когда оппонент признает свою вину. Если этот
                                     процесс объективно затянется, it happens разработает и предложит вам необходимую
                                     программу реабилитации.</p>
                             </div>
-                            <a href="#" class="item-link"></a>
                         </div>
 <!--                        <picture class="item-picture">-->
 <!--                            <img src="img/pic.png" alt="">-->
 <!--                        </picture>-->
+                        </a>
                     </div>
                     <div class="section-content__item">
+                        <a href="#" class="section-content__item-link">
+
                         <div class="item-wrapper">
-                            <h4 class="item-title">Ремонт и предоставление подменного автомобиля
-                            </h4>
+                            <div class="item-title-wrapper">
+                                <h4 class="item-title">Ремонт и предоставление подменного автомобиля
+
+                                </h4>
+                                <img class="arrow" src="img/arrow.svg" alt="">
+
+                            </div>
                             <div class="item-text">
                                 <p>Если ваш автомобиль или мотоцикл пострадал в результате ДТП, произошедшего не по
                                     вашей вине, компания it happens готова взять на себя все мероприятия по ремонту
                                     и предоставлению вам подменного транспортного средства.</p>
                             </div>
-                            <a href="#" class="item-link"></a>
                         </div>
 <!--                        <picture class="item-picture">-->
 <!--                            <img src="img/pic.png" alt="">-->
 <!--                        </picture>-->
+                        </a>
                     </div>
                     </li>
                 </ul>
@@ -554,15 +842,15 @@
         <div class="section-inner">
             <div class="section-content-wrapper">
                 <div class="section-content-achievement-block">
-                    <h3 class="achievement-title">98%
+                    <h3 class="achievement-title">98%<br>
                         Successful Rate</h3>
-                    <span class="achievement-text">Curabitur ac leo nunc.
+                    <span class="achievement-text">Curabitur ac leo nunc.<br>
 Vestibulum et mauris vel ante finibus.</span>
                 </div>
                 <div class="section-content-achievement-block">
-                    <h3 class="achievement-title">#1 Claims
+                    <h3 class="achievement-title">#1 Claims<br>
                         Management Company</h3>
-                    <span class="achievement-text">Curabitur ac leo nunc.
+                    <span class="achievement-text">Curabitur ac leo nunc.<br>
 Vestibulum et mauris vel ante finibus.</span>
                 </div>
             </div>
@@ -588,11 +876,11 @@ Vestibulum et mauris vel ante finibus.</span>
                     <a href="#" class="btn-main">другие истории</a>
                     </article>
                 </div>
-<!--                <picture>-->
-<!--&lt;!&ndash;                    <source srcset="img/pic.webp" type="image/webp">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <source srcset="img/pic-mobile.png" media="(max-width: 575px)" type="image/png">&ndash;&gt;-->
-<!--                    <img src="img/img11.svg" alt="">-->
-<!--                </picture>-->
+                <picture>
+<!--                    <source srcset="img/pic.webp" type="image/webp">-->
+<!--                    <source srcset="img/pic-mobile.png" media="(max-width: 575px)" type="image/png">-->
+                    <img src="img/img11.svg" alt="">
+                </picture>
             </div>
         </div>
     </section>
@@ -623,8 +911,8 @@ Vestibulum et mauris vel ante finibus.</span>
                 <div class="section-text-wrapper">
                     <h3 class="section-main-title">If you have any questions, please do not hesitate to contact us.</h3>
                     <div class="section-contact-info">
-                        <a href="mailto:team@ithappens.co.uk">team@ithappens.co.uk</a>
-                        <a href="tel:+012 12 86 86 86" class="">012 12 86 86 86</a>
+                        <a class="section-contact-info__email" href="mailto:team@ithappens.co.uk">team@ithappens.co.uk</a>
+                        <a class="section-contact-info__number" href="tel:+012 12 86 86 86">012 12 86 86 86</a>
 
                     </div>
                     <a href="#" class="btn-secondary">Консультация бесплатно</a>
@@ -651,12 +939,19 @@ Vestibulum et mauris vel ante finibus.</span>
                 <ul class="section-content__list">
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <input class="item-wrapper__check" type="checkbox" checked>
-                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
+<!--                            <label for="check">-->
+<!--                                check-->
+<!--                            </label>-->
+                                    <input type="checkbox" class="checkbox">
+                                    <span class="open-close"></span>
+<!--                                <input class="item-wrapper__check" type="checkbox" checked>-->
+<!--                                <img class="item-wrapper__icon visible" src="img/plus.svg" alt="">-->
+<!--                                <img class="item-wrapper__icon transparent" src="img/minus.svg" alt="">-->
+
                             <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
 
                             <div class="item-text">
-                                <p> <strong>it happens</strong>  – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
+                                <p> <strong>ithappens</strong>  – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
                                     Companies House:<br>
                                     <a href="#">https://beta.companieshouse.gov.uk/company/08786640</a></p>
                                     <p>Financial Conduct Authority (FCA):<br>
@@ -664,14 +959,16 @@ Vestibulum et mauris vel ante finibus.</span>
                                     </a></p>
                                     <p>Information Commissioner’s Office (ICO):<br>
                                         <a href="#">https://ico.org.uk/ESDWebPages/Entry/ZA033758</a></p>
-                                    </p>
+<!--                                    </p>-->
                             </div>
                         </div>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <input class="item-wrapper__check" type="checkbox" checked>
-                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
+                            <input type="checkbox" class="checkbox">
+                            <span class="open-close"></span>
+<!--                            <input class="item-wrapper__check" type="checkbox" checked>-->
+<!--                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">-->
                             <h4 class="item-title">Как мне стоит поступить, сразу сообщить о происшествии в страховую
                                 компанию или сначала связаться с it happens?</h4>
                             <div class="item-text">
@@ -689,8 +986,10 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <input class="item-wrapper__check" type="checkbox" checked>
-                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
+                            <input type="checkbox" class="checkbox">
+                            <span class="open-close"></span>
+<!--                            <input class="item-wrapper__check" type="checkbox" checked>-->
+<!--                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">-->
                             <h4 class="item-title">Мне кажется, я несу ответственность за произошедшее.
                                 Могу ли я и в этом случае обратиться к вам?</h4>
                             <div class="item-text">
@@ -708,8 +1007,11 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <input class="item-wrapper__check" type="checkbox" checked>
-                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
+                            <input type="checkbox" class="checkbox">
+                            <span class="open-close"></span>
+
+<!--                            <input class="item-wrapper__check" type="checkbox" checked>-->
+<!--                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">-->
                             <h4 class="item-title">Я живу за пределами Лондона и работаю допоздна.
                                 Каким образом будет строиться работа с it happens?</h4>
                             <div class="item-text">
@@ -727,9 +1029,11 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <input class="item-wrapper__check" type="checkbox" checked>
-                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
-                            <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
+                            <input type="checkbox" class="checkbox">
+                            <span class="open-close"></span>
+<!--                            <input class="item-wrapper__check" type="checkbox" checked>-->
+<!--                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">-->
+                            <h4 class="item-title">Я получил травму во время отпуска в Великобритании. Могу ли я получить компенсацию, находясь уже в своей стране?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
                                     Companies House:
@@ -745,9 +1049,11 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <input class="item-wrapper__check" type="checkbox" checked>
-                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
-                            <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
+                            <input type="checkbox" class="checkbox">
+                            <span class="open-close"></span>
+<!--                            <input class="item-wrapper__check" type="checkbox" checked>-->
+<!--                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">-->
+                            <h4 class="item-title">Я плохо говорю по-английски. Может ли это усложнить процесс получения компенсации?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
                                     Companies House:
@@ -763,9 +1069,11 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <input class="item-wrapper__check" type="checkbox" checked>
-                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
-                            <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
+                            <input type="checkbox" class="checkbox">
+                            <span class="open-close"></span>
+<!--                            <input class="item-wrapper__check" type="checkbox" checked>-->
+<!--                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">-->
+                            <h4 class="item-title">Мой муж стал виновником аварии, я была пассажиром. Можно ли мне в данной ситуации рассчитывать на компенсацию?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
                                     Companies House:
@@ -781,9 +1089,11 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <input class="item-wrapper__check" type="checkbox" checked>
-                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
-                            <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
+                            <input type="checkbox" class="checkbox">
+                            <span class="open-close"></span>
+<!--                            <input class="item-wrapper__check" type="checkbox" checked>-->
+<!--                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">-->
+                            <h4 class="item-title">Потребуется ли мое присутствие в суде?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
                                     Companies House:
@@ -799,9 +1109,11 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <input class="item-wrapper__check" type="checkbox" checked>
-                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
-                            <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
+                            <input type="checkbox" class="checkbox">
+                            <span class="open-close"></span>
+<!--                            <input class="item-wrapper__check" type="checkbox" checked>-->
+<!--                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">-->
+                            <h4 class="item-title">Виновник ДТП покинул место происшествия. Что мне делать?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
                                     Companies House:
@@ -817,9 +1129,12 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <input class="item-wrapper__check" type="checkbox" checked>
-                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
-                            <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
+                            <input type="checkbox" class="checkbox">
+                            <span class="open-close"></span>
+
+<!--                            <input class="item-wrapper__check" type="checkbox" checked>-->
+<!--                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">-->
+                            <h4 class="item-title">Несчастный случай произошёл два года назад. Могу ли я рассчитывать на компенсацию?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
                                     Companies House:
@@ -835,9 +1150,11 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <input class="item-wrapper__check" type="checkbox" checked>
-                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
-                            <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
+                            <input type="checkbox" class="checkbox">
+                            <span class="open-close"></span>
+<!--                            <input class="item-wrapper__check" type="checkbox" checked>-->
+<!--                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">-->
+                            <h4 class="item-title">Должен ли я оплачивать услуги адвокатов?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
                                     Companies House:
@@ -853,9 +1170,11 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <input class="item-wrapper__check" type="checkbox" checked>
-                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
-                            <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
+                            <input type="checkbox" class="checkbox">
+                            <span class="open-close"></span>
+<!--                            <input class="item-wrapper__check" type="checkbox" checked>-->
+<!--                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">-->
+                            <h4 class="item-title">Сколько стоят услуги it happens?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
                                     Companies House:
@@ -871,9 +1190,11 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <input class="item-wrapper__check" type="checkbox" checked>
-                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
-                            <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
+                            <input type="checkbox" class="checkbox">
+                            <span class="open-close"></span>
+<!--                            <input class="item-wrapper__check" type="checkbox" checked>-->
+<!--                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">-->
+                            <h4 class="item-title">От чего зависит размер компенсации?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
                                     Companies House:
@@ -889,9 +1210,9 @@ Vestibulum et mauris vel ante finibus.</span>
                     </li>
                     <li class="section-content__item">
                         <div class="item-wrapper">
-                            <input class="item-wrapper__check" type="checkbox" checked>
-                            <img class="item-wrapper__icon" src="img/plus.svg" alt="">
-                            <h4 class="item-title">Где я могу получить официальную информацию о вашей компании?</h4>
+                            <input type="checkbox" class="checkbox">
+                            <span class="open-close"></span>
+                            <h4 class="item-title">В каких случаях можно рассчитывать на компенсацию?</h4>
                             <div class="item-text">
                                 <p>it happens – торговая марка, принадлежащая Euronet Alliance Ltd, компании по управлению исками, c 2013 года работающей на рынке Англии и Уэльса. Информацию о компании вы можете получить по следующим ссылкам:
                                     Companies House:
@@ -922,9 +1243,9 @@ Vestibulum et mauris vel ante finibus.</span>
                 </div>
                <ul class="section-content__list">
                    <li class="section-content__item">
+                       <a href="#" class="section-content__link">
                        <article class="item-article">
                            <picture>
-<!--                               <source srcset="img/pic.webp" type="image/webp">-->
                                <img src="img/post-img.svg" alt="">
                            </picture>
                            <div class="article-text">
@@ -935,11 +1256,12 @@ Vestibulum et mauris vel ante finibus.</span>
                                </a>
                            </div>
                        </article>
+                       </a>
                    </li>
                    <li class="section-content__item">
+                       <a href="#" class="section-content__link">
                        <article class="item-article">
                            <picture>
-<!--                               <source srcset="img/pic.webp" type="image/webp">-->
                                <img src="img/post-img.svg" alt="">
                            </picture>
                            <div class="article-text">
@@ -950,21 +1272,22 @@ Vestibulum et mauris vel ante finibus.</span>
                                </a>
                            </div>
                        </article>
+                       </a>
                    </li>
                    <li class="section-content__item">
+                       <a href="#" class="section-content__link">
                        <article class="item-article">
                            <picture>
-<!--                               <source srcset="img/pic.webp" type="image/webp">-->
                                <img src="img/post-img.svg" alt="">
                            </picture>
                            <div class="article-text">
                                <span class="article-title">Proin iaculis urna non ultricies accumsan</span>
                                <a href="#" class="article-link">
                                    <img src="img/arrow.svg" alt="">
-
                                </a>
                            </div>
                        </article>
+                       </a>
                    </li>
                </ul>
             </div>
@@ -974,9 +1297,7 @@ Vestibulum et mauris vel ante finibus.</span>
 
     <!-- Map-->
     <section class="section-outer section-map">
-<!--        <div class="section-inner">-->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19349.827835088698!2d-122.45149667744691!3d37.74612298824241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2z0KHQsNC9LdCk0YDQsNC90YbQuNGB0LrQviwg0JrQsNC70LjRhNC-0YDQvdC40Y8sINCh0KjQkA!5e0!3m2!1sru!2sua!4v1604256257986!5m2!1sru!2sua"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-<!--        </div>-->
+        <div id="map"></div>
     </section>
     <!-- / Map-->
 
@@ -1063,27 +1384,6 @@ Vestibulum et mauris vel ante finibus.</span>
         </div>
     </div>
 </footer>
-
-<!--<div class="article-text">-->
-<!--    <p>Lorem ipsum</p>-->
-<!--    <p>Lorem ipsum</p>-->
-<!--    <p>Lorem ipsum</p>-->
-<!--    <p>Lorem ipsum</p>-->
-<!--</div>-->
-
-
-<picture>
-    <source srcset="img/pic.webp" type="image/webp">
-    <img src="img/pic.png" alt="">
-</picture>
-
-
-<picture>
-    <!-- при экранах с таким размером другая картинка-->
-    <source srcset="img/pic-mobile.png" media="(max-width: 575px)" type="image/png">
-    <img src="img/pic.png" alt="">
-</picture>
-
 </body>
 
 </html>
