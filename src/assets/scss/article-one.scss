@@ -1,0 +1,129 @@
+@import "fonts";
+@import "common";
+@import "media";
+@import "mixins";
+@import "variables";
+
+
+.wrapper.__article-one-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media (max-width: 499px) {
+    flex-direction: column;
+  }
+}
+
+.section-text-wrapper.__article-one-page {
+  margin-top: 1%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4%;
+
+  @media (max-width: 991px) {
+    margin-bottom: 5px;
+    margin-top: 0;
+  }
+}
+
+.section-main-title.__article-one-page {
+  margin-bottom: 1%;
+}
+
+.story-section.__article-one-page {
+  margin-bottom: 4%;
+
+  @media (max-width: 991px) {
+    margin-bottom: 50px;
+  }
+}
+
+.section-main.__article-one-page.fs-section-bg {
+
+  @media (min-width: 992px) {
+    background-image: url("../images/about-us-bg-1.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top center;
+  }
+  @media (max-width: 991px) {
+    background-image: url("../images/fs-mobile-top-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top center;
+  }
+}
+
+.section-main__content-wrap.__article-one-page {
+  flex-direction: column;
+}
+
+.social-list-square {
+  width: 100%;
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  &.__mobile {
+    @media (min-width: 768px) {
+      display: none;
+    }
+    @media (max-width: 767px) {
+      display: block;
+      width: auto;
+    }
+  }
+}
+
+.social-list-square__item.__story-one-page {
+  //margin-right: 4%;
+
+  //&:last-child {
+  //  margin-right: 0;
+  //}
+
+  margin-left: 2.5%;
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 35px;
+    height: 35px;
+    margin-top: 2%;
+
+    img {
+      width: 15px;
+    }
+  }
+
+  @media (max-width: 767px) {
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.picture-article.__article-one-page {
+  border-radius: $border-radius;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  img {
+    margin-bottom: 5%;
+    width: 100%;
+
+
+    border-radius: $border-radius;
+  }
+}
+
+.section-inner.__article-one-page {
+  padding-top: 4%;
+
+  @media (max-width: 991px) {
+    width: 88%;
+    margin: 0 auto;
+  }
+}

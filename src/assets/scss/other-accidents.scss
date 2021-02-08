@@ -1,0 +1,30 @@
+@import "fonts";
+@import "common";
+@import "media";
+@import "mixins";
+@import "variables";
+
+.picture.__injuries-first-section-bg {
+
+  @media (min-width: 992px) {
+    position: absolute;
+    right: 1.5%;
+    top: 8%;
+  }
+  @media (max-width: 991px) {
+    display: none;
+  }
+}
+
+
+.section-main.section-posts.__other-accidents-page {
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.picture.__injuries-first-section.__other-accidents-page {
+  @media (min-width: 992px) {
+    display: none;
+  }
+}

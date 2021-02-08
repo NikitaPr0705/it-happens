@@ -1,0 +1,33 @@
+@import "variables";
+
+
+.section-main.section-fact.__injuries-and-traumas {
+  background-color: white;
+}
+
+
+
+.section-main.section-stories.__injuries-and-traumas {
+  background-image: url("../images/stories-injuries-traumas.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top center;
+
+  @media (max-width: 991px) {
+    display: none;
+  }
+}
+
+.section-main.section-faq.__injuries-and-traumas {
+
+  @media (min-width: 992px) {
+    background: none;
+  }
+
+  @media (max-width: 991px) {
+    background-image: url("../images/bg-injuries-faq.svg"), url("../images/faq-mobile-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+    background-position: top center, bottom center;
+  }
+}
